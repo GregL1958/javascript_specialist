@@ -1,1 +1,1 @@
-Greg's LAVASCRIPT Specialist Repository
+Greg's javascript Specialist Repository
