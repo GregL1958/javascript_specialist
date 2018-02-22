@@ -6,7 +6,7 @@ window.onload=function() {
 function findMostFrequent() {
     var text = document.getElementById("inputNameBox").value; 
     //turn text to an array
-    var arr = text.split(",");
+    var arr = text.split(" ");
     var i = 0;
     var startIndex = 0;
     var finishIndex = 0;
@@ -14,11 +14,14 @@ function findMostFrequent() {
     var timesFound = 1;
     var searchItem;
     var Item;
+    var mostFrequentArray = [];
     var nElements = [];
     document.getElementById("demo1").innerHTML = "Input text = " + arr;
     
     nElements = returnFirstNelements(arr); 
-    document.getElementById("demo3").innerHTML =  "The first " + nElements.length + " items are " + nElements ;
+    if (nElements.length > 0) {
+        document.getElementById("demo4").innerHTML =  "The first " + nElements.length + " items are " + nElements; 
+    }
     
     //sort the array to get the random input items together
     arr.sort(); 
@@ -36,7 +39,7 @@ function findMostFrequent() {
             continue;
         }
         // get how many times item is in array.
-        timesFound = (finishIndex - startIndex) + 1;
+        timesFound = (finishIndex - startIndex) + 1;        
         if (timesFound > mostFrequent ) {
             item = searchItem;
             mostFrequent = timesFound;
@@ -46,20 +49,24 @@ function findMostFrequent() {
         
     }
     if (mostFrequent == timesFound) {
-        document.getElementById("demo2").innerHTML = " One or more items appears " + mostFrequent + "times";
-
+        if (mostFrequent == 1) {
+            document.getElementById("demo2").innerHTML = "USER ERROR: All ITEMS ONLY APPEAR 1 TIME!!!"; 
+        } else {
+            document.getElementById("demo2").innerHTML = "USER ERROR: NO ONE ITEM APPEARS THE MOST TIMES!!!"; 
+        }  
     } else {
-        document.getElementById("demo2").innerHTML =  item + " appears " + mostFrequent + " times";  
+        document.getElementById("demo2").innerHTML =  "The item " + item + " appears " + mostFrequent + " times";  
     }
     
     
 }
 
 function returnFirstNelements(arr) {
-    var numElements = document.getElementById("inputNumElements").value;
+    var numElements = parseInt(document.getElementById("inputNumElements").value);
+    document.getElementById("demo3").innerHTML = "You asked for " + numElements + " items";
     var returnArray = [];
     if (numElements > arr.length ) {
-       document.getElementById("demo3").innerHTML = "ERROR you asked for more items then you entered!!!"
+       document.getElementById("demo4").innerHTML = "ERROR you asked for more items then you entered!!!";
     } else {
         for (var i = 0; i < numElements; i++) {
             returnArray[i] = arr[i];
