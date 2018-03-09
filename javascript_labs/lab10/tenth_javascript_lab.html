@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab #10</title>
+        <script src="main.js"></script>
+        <style>
+            h2 {
+                margin: auto;
+                width: 40%;
+                border: 3px solid;
+                padding: 0px;
+                text-align: center;
+            }
+            p {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-right: 0px;
+                margin-left: 0px;
+            }
+            
+            body {
+                background-color: lightblue;
+            } 
+            
+            div {
+                text-align: center;
+            }
+        </style>
+    </head>       
+    <body>
+        <h2><p>Enter a date to see if it's a weekend.<br>
+               The date in your input box should<br> 
+               be written in the following format:<br>
+               July 13, 2017 or Dec 20, 2017 or 2/25/2017.<br>
+               The year can be entered in as yyyy or yy. <br>
+               If you leave off the year the default is the current Year.</p></h2>
+        <div>
+            <input type='text' id='inputDay' />
+            <button id='checkDay'> CHECK IF WEEKEND </button>
+            <h3><p id="result1"></p></h3>
+        </div>
+        <h2><p>Enter the month's number to find how many days it has</p></h2>
+        <div>
+            <input type="number" id="inputMonth" min="1" max="12">
+            <button id='checkMonth'> CHECK FOR DAYS</button>
+            <h3><p id="result2"></p></h3>
+        </div>
+
+    </body>
+</html>
