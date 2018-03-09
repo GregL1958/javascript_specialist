@@ -30,5 +30,5 @@ function getDaysInMonth(e) {
     month --;
     var months = ["January","February","March","April","May","June","July","August","September",                           "October","November","December"];
     var daysInMonth = new Date(year, month, 0).getDate();
-    document.getElementById("result2").innerHTML = months[month] + " has " + daysInMonth + " in it.";
+    document.getElementById("result2").innerHTML = "There are " + daysInMonth + " days in " + months[month];
 }
